@@ -12,17 +12,17 @@ namespace Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Departments
+    public partial class Department
     {
-        public Departments()
+        public Department()
         {
-            this.Employees = new HashSet<Employees>();
+            this.Employee = new HashSet<Employee>();
         }
     
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
     
-        public virtual ICollection<Employees> Employees { get; set; }
+        public virtual ICollection<Employee> Employee { get; set; }
     }
 }

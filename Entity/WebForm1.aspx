@@ -18,7 +18,7 @@
                     <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
                     <asp:TemplateField HeaderText="Employee">
                         <ItemTemplate>
-                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSource='<%# Eval("Employees") %>'>
+                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSource='<%# Eval("Employee") %>'>
                                 <Columns>
                                     <asp:BoundField DataField="FirstName" HeaderText="First Name" />
                                     <asp:BoundField DataField="LastName" HeaderText="Last Name" />
@@ -39,7 +39,7 @@
                 <SortedDescendingCellStyle BackColor="#FCF6C0" />
                 <SortedDescendingHeaderStyle BackColor="#820000" />
             </asp:GridView>
-            <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=EmployeeDbContext" DefaultContainerName="EmployeeDbContext" EnableFlattening="False" EntitySetName="Departments" EntityTypeFilter="Departments" Include="Employees"></asp:EntityDataSource>
+            <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=EmployeeModelContainer" DefaultContainerName="EmployeeModelContainer" EnableFlattening="False" EntitySetName="Departments" EntityTypeFilter="Department" Include="Employee"></asp:EntityDataSource>
         </div>
     </form>
 </body>
