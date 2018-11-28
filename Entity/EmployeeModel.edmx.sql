@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/28/2018 20:36:28
+-- Date Created: 11/28/2018 20:49:58
 -- Generated from EDMX file: C:\Users\Fenrirus\source\repos\Entity\Entity\EmployeeModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_DepartmentEmployee]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Employees] DROP CONSTRAINT [FK_DepartmentEmployee];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Departments]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Departments];
+GO
+IF OBJECT_ID(N'[dbo].[Employees]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Employees];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -41,7 +50,7 @@ CREATE TABLE [dbo].[Employees] (
     [FirstName] nvarchar(max)  NOT NULL,
     [LastName] nvarchar(max)  NOT NULL,
     [Gender] nvarchar(max)  NOT NULL,
-    [Salary] nvarchar(max)  NOT NULL,
+    [Salary] int  NOT NULL,
     [DepartmentId] int  NOT NULL
 );
 GO
